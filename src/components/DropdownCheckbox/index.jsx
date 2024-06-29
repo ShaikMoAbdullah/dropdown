@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Dropdown from "../../images/Dropdown";
 import Tick from "../../images/Tick";
 
-function DropdownCheckbox({ data, handleCheckboxChange, text, checkedItems }) {
+function DropdownCheckbox({ data, onChange, text, checkedItems }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -35,9 +35,7 @@ function DropdownCheckbox({ data, handleCheckboxChange, text, checkedItems }) {
                 type="checkbox"
                 name={categoryValue}
                 checked={isChecked}
-                onChange={(e) =>
-                  handleCheckboxChange(e, categoryId, categoryValue, data)
-                }
+                onChange={(e) => onChange(e, categoryId, categoryValue, data)}
                 className="hidden"
               />
               <span
