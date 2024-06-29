@@ -1,23 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import data from "./data/category-relation.json";
+import categories from "./data/id-to-name-map.json";
+import DropdownCheckbox from "./components/DropdownCheckbox";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <DropdownCheckbox data={data.relationships} categories={categories} />
     </div>
   );
 }
